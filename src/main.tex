@@ -1,0 +1,71 @@
+%% main.tex
+%%
+%%
+
+\documentclass[12pt]{ltjsarticle}
+
+\usepackage{style}
+
+% 子ファイルを扱うためのパッケージ
+\usepackage{subfiles}
+
+%%%%%表紙%%%%%
+\begin{document}
+
+    %%%%%%%%%%%%%
+
+    \section*{Abstract}
+    \lipsum[1]
+    \clearpage
+    
+    % \newpage
+    \thispagestyle{empty}	%ページ番号非表示
+    \newpage
+    
+    %%%%%目次%%%%%
+    \tableofcontents
+    % \thispagestyle{empty}	%ページ番号非表示
+    %%%%%%%%%%%%%%
+
+    \newpage
+    
+    %%%%%本文%%%%%%
+    % 章番号のカウンタ変数を0に戻す
+    \setcounter{section}{0}
+    % \subfile{path/to/file}コマンドで子ファイルを\includeできる。
+    \subfile{01_chapter1/introduction}
+    
+    % 改ページ
+    \clearpage
+    
+    % 子ファイルの画像パス
+    \graphicspath{{02_chapter2/fig}}
+    \subfile{02_chapter2/chapter2}
+    % \processdelayedfloats
+
+    \clearpage
+
+    \graphicspath{{05_conclusion/fig/}}
+    \subfile{05_conclusion/conclusion}
+    % \processdelayedfloats
+    
+    \clearpage
+    
+    %%%%%%%%%%%%%
+    
+    \newpage
+    
+    %%%%%%参考文献%%%%%%
+    
+    \bibliographystyle{junsrt}
+    \bibliography{ref}
+
+    % \newpage
+
+    %%%%%%謝辞%%%%%%
+
+    \subfile{99_acknowledgement/acknowledgement}
+    
+    %%%%%%%%%%%%%
+    
+\end{document}

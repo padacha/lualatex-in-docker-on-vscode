@@ -1,0 +1,38 @@
+%% style.sty %%
+
+%% 原ノ味フォントはいいぞ
+\usepackage[haranoaji, nfssonly]{luatexja-preset}
+
+%% 余白上下左右25mm指定
+\usepackage[left=25mm,right=25mm,top=20mm,bottom=25mm]{geometry} 
+%% 行間1.5
+\usepackage{setspace} 
+\setstretch{1.5}
+
+%% includegraphics用
+\usepackage{graphicx}
+
+%% これを入れておくと、コンパイル時に参照番号に自動でリンクを貼ってくれるので、便利。
+\usepackage{hyperref}
+\setcounter{section}{1}
+\usepackage{amsthm}
+
+%% ダミーテキスト
+\usepackage{lipsum}
+
+%% 第n章にする
+\renewcommand{\presectionname}{第}
+\renewcommand{\postsectionname}{章}
+
+%% et al.を斜体にする．
+\newcommand{\etal}{\textit{et al.}}
+%% 表のヘッダー行を中央揃えにする
+\newcommand{\header}[1]{\multicolumn{1}{c}{#1}}
+
+%% 参照番号
+\newcommand{\eq}[1]{式~(\ref{eq:#1})}
+\newcommand{\fig}[1]{図~\ref{fig:#1}}
+\newcommand{\tab}[1]{表~\ref{tab:#1}}
+\newcommand{\refsec}[1]{第\ref{sec:#1}章}
+\newcommand{\refssec}[1]{第\ref{subsec:#1}節}
+\newcommand{\thm}[1]{定理\ref{thm:#1}}

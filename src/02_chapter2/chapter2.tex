@@ -1,0 +1,28 @@
+%% chapter2.tex
+
+%%%%%%%% 第2章 %%%%%%%%
+
+\documentclass[/workdir/src/main.tex]{subfiles}
+
+\begin{document}
+\section{研究手法}
+
+\lipsum[2]
+
+% \fig{}は'style.sty'で定義した自作コマンド。図のキャプションを「図1 ~~」みたいにしてくれる。
+図を、\fig{samplefig}に示す。この結果から、○○であることが示された~\cite{bibtexkey}。
+
+\clearpage
+\begin{figure}[h]
+  \centering
+  % 図の幅を行の幅にする。
+  \includegraphics[width=\columnwidth]{figure.png}
+  \caption{ワイの人生}
+  \label{fig:samplefig}
+\end{figure}
+
+\ifSubfilesClassLoaded{%
+  \clearpage%
+  \bibliography{../ref}%
+}{}
+\end{document}

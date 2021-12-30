@@ -1,0 +1,36 @@
+%% introduction.tex
+
+% 子ファイルには親ファイルのパスを指定する
+\documentclass[/workdir/src/main.tex]{subfiles}
+
+% subfiles使用時のコンパイルでは、子ファイルのプリアンブルは無視され、親ファイルのプリアンブルが適用される。
+\begin{document}
+% subfileをビルドした時に、章番号カウンタを0にする。\ifSubfilesClassLoaded についての詳細は、https://ftp.yz.yamagata-u.ac.jp/pub/CTAN/macros/latex/contrib/subfiles/subfiles.pdf を参照されたい。
+\ifSubfilesClassLoaded{%
+  \setcounter{section}{0}
+}{}
+
+\section{緒言}
+
+\subsection{背景と目的}
+
+\subsection{本論文の構成}
+      
+本論文の構成を以下に示す．
+
+第1章では，hogehoge．
+
+第2章では，hogehoge．
+
+第3章では，hogehoge．
+
+第4章では，hogehoge．
+
+第5章は，hogehoge．
+
+% subfileをビルドした時に、ページ最後に参考文献リストを出力する。
+\ifSubfilesClassLoaded{%
+  \clearpage%
+  \bibliography{../ref}%
+}{}
+\end{document}
